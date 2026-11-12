@@ -1,0 +1,9 @@
+{
+  "traffic": {
+    "columns": {"time": "timestamp", "detector_id": "entity", "site": "location", "count": "value", "metric": "measurement"}
+  },
+  "weather": {
+    "records_key": "data",
+    "columns": {"obs_time": "timestamp", "station": "entity", "temp_c": "value"}
+  }
+}

@@ -1,0 +1,17 @@
+# Core
+fastapi>=0.110
+uvicorn[standard]>=0.29      # [standard] includes the websockets library used for live push
+pydantic>=2.5
+python-dotenv>=1.0
+pandas>=2.1
+numpy>=1.26
+scipy>=1.11
+scikit-learn>=1.4
+joblib>=1.3
+networkx>=3.2
+matplotlib>=3.8
+
+# Recommended (used automatically when installed)
+xgboost>=2.0                 # gradient boosting engine; falls back to scikit-learn HistGradientBoosting
+# ortools>=9.8               # optional CVRP solver for waste collection; falls back to nearest-neighbour + 2-opt
+# shap>=0.45                 # optional, for model explainability experiments

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CityOS — Patiala</title>
+  <meta name="color-scheme" content="light dark" />
+  <link rel="icon" href="data:," />
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <div class="backdrop" aria-hidden="true"></div>
+
+  <!-- ===================== ENTRY: agent selection ===================== -->
+  <main id="entry" class="entry">
+    <div class="entry-inner">
+      <div class="wordmark"><span class="mark" aria-hidden="true"></span>CITYOS</div>
+      <h1 class="entry-title">Who is operating the city?</h1>
+      <p class="entry-sub" id="entry-sub">Preparing Patiala…</p>
+      <div class="profiles" id="profiles" role="list"></div>
+      <div class="entry-foot">
+        <span id="entry-clock">—</span>
+        <span class="dot-sep">·</span>
+        <span id="entry-engine">Starting engine</span>
+        <span class="dot-sep">·</span>
+        <span id="entry-llm">—</span>
+      </div>
+      <ul class="boot" id="boot"></ul>
+    </div>
+  </main>
+
+  <!-- ===================== WORKSPACE ===================== -->
+  <div id="workspace" class="workspace" hidden>
+    <header class="topbar glass">
+      <button class="brand" id="to-entry" title="Switch operator">
+        <span class="mark" aria-hidden="true"></span><span>CityOS</span>
+      </button>
+      <nav class="switcher" id="switcher" aria-label="Agents"></nav>
+      <div class="top-right">
+        <div class="chip" id="chip-time">—</div>
+        <div class="chip" id="chip-weather">—</div>
+        <button class="chip chip-health" id="chip-health" title="City Health">—</button>
+        <div class="seg" id="speed" role="group" aria-label="Simulation speed">
+          <button data-speed="pause" title="Pause / resume">❚❚</button>
+          <button data-speed="1">1×</button>
+          <button data-speed="2">2×</button>
+          <button data-speed="4">4×</button>
+        </div>
+        <button class="chip chip-auth" id="chip-auth">Authorisation <b id="auth-count">0</b></button>
+      </div>
+    </header>
+
+    <section class="hero" id="hero">
+      <div class="hero-left">
+        <div class="hero-agent" id="hero-agent"></div>
+        <h2 class="headline" id="headline">—</h2>
+        <div class="hero-meta" id="hero-meta"></div>
+      </div>
+      <div class="kpis" id="kpis"></div>
+    </section>
+
+    <div class="tabs glass" id="tabs" role="tablist"></div>
+
+    <section class="grid" id="grid">
+      <div class="col-main">
+        <article class="card glass map-card">
+          <div class="card-head">
+            <h3 id="map-title">Digital twin</h3>
+            <div class="legend" id="legend"></div>
+          </div>
+          <div class="map-wrap">
+            <svg id="map" role="img" aria-label="City digital twin map"></svg>
+            <div class="map-tip" id="map-tip" hidden></div>
+          </div>
+          <div class="map-foot"><span id="map-foot">Every action executes in a simulated digital twin — no physical system is connected.</span></div>
+        </article>
+        <article class="card glass" id="panel"></article>
+      </div>
+      <aside class="col-side">
+        <article class="card glass">
+          <div class="card-head"><h3>Needs attention</h3><span class="muted small" id="attn-count"></span></div>
+          <div class="list" id="attention"></div>
+        </article>
+        <article class="card glass">
+          <div class="card-head"><h3>Decisions &amp; actions</h3><span class="muted small">verified against a no-action twin</span></div>
+          <div class="list" id="actions"></div>
+        </article>
+        <article class="card glass">
+          <div class="card-head"><h3>Agent activity</h3>
+            <div class="seg seg-sm" id="phase-filter">
+              <button data-f="all" class="on">All</button><button data-f="decide">Decide</button><button data-f="verify">Verify</button><button data-f="adapt">Adapt</button>
+            </div>
+          </div>
+          <div class="log" id="activity"></div>
+        </article>
+      </aside>
+    </section>
+  </div>
+
+  <!-- ===================== SHEETS ===================== -->
+  <div class="scrim" id="scrim" hidden></div>
+  <aside class="sheet glass" id="sheet" hidden aria-modal="true" role="dialog">
+    <button class="sheet-close" id="sheet-close" aria-label="Close">✕</button>
+    <div id="sheet-body"></div>
+  </aside>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
